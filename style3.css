@@ -1,0 +1,98 @@
+body {
+    //border: 2px solid;
+
+}
+.centered {
+    width: 50%;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-around;
+}
+.myLabel {
+    text-align:left;
+    //align-items: start;
+    
+    padding: 5px;
+}
+
+.centeredButtons {
+    width: 50%;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-around;
+}
+
+.centeredButtons button {
+    width: 50%;
+    margin: 5px; /* or whatever you like */
+}
+#box1 {
+    border: 5px solid;
+    width: 250px;
+    height: 250px;
+    font-size: 22px;
+    background: greenyellow;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+#box2 {
+    border: 5px solid;
+    width: 250px;
+    height: 250px;
+    font-size: 22px;
+    background: dodgerblue;
+}
+
+.red {
+    color: rgb(255, 47, 47);
+}
+
+.circular-progress {
+    --size: 250px;
+    --half-size: calc(var(--size) / 2);
+    --stroke-width: 20px;
+    --radius: calc((var(--size) - var(--stroke-width)) / 2);
+    --circumference: calc(var(--radius) * pi * 2);
+    --dash: calc((var(--progress) * var(--circumference)) / 100);
+    animation: progress-animation 5s linear 0s 5 forwards;
+    
+  }
+  
+  .circular-progress circle {
+    cx: var(--half-size);
+    cy: var(--half-size);
+    r: var(--radius);
+    stroke-width: var(--stroke-width);
+    fill: none;
+    stroke-linecap: butt;
+  }
+  
+  .circular-progress circle.bg {
+    stroke: #ddd;
+  }
+  
+  .circular-progress circle.fg {
+    transform: rotate(-90deg);
+    transform-origin: var(--half-size) var(--half-size);
+    stroke-dasharray: var(--dash) calc(var(--circumference) - var(--dash));
+    transition: stroke-dasharray 0s linear 0s;
+    stroke: #5394fd;
+  }
+  
+  @property --progress {
+    syntax: "<number>";
+    inherits: false;
+    initial-value: 0;
+  }
+  
+  @keyframes progress-animation {
+    from {
+      --progress: 0;
+    }
+    to {
+      --progress: 100;
+    }
+  }
